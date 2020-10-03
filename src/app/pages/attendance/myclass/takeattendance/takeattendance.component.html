@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-sm-12">
+    <!-- Hover table card start -->
+    <app-card>
+      
+        <div class="row">
+          <div class="col-md-4">
+            <label>Select Class</label>
+            <select class="form-control">
+              <option value="">--Select Class--</option>
+              <option value="">Class 1 A - Hindi</option>
+              <option value="">Class 1 A - Maths</option>
+              <option value="">Class 1 B - Science</option>
+              <option value="">Class 2 A - Hindi</option>
+            </select>
+          </div>
+        </div>
+    </app-card>
+
+    <app-card>
+      <div class="table-responsive px-10">
+        <table class="table table-hover" #dataTable>
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Roll No</th>
+            <th>Student Name</th>
+            <th>Status</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>101</td>
+            <td>Mark</td>
+            <td>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>102</td>
+            <td>Jacob</td>
+            <td>
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </td>
+          </tr>
+          <tr class="leave-row">
+            <th scope="row">3</th>
+            <td>103</td>
+            <td>Larry</td>
+            <td class="pl-3">Leave</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </app-card>
+    <!-- Hover table card end -->
+  </div>
+</div>
