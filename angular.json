@@ -140,7 +140,7 @@
       }
     }
   },
-  "defaultProject": "guru-able-v1.7.0",
+  "defaultProject": "imagine-penguine-erp",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",

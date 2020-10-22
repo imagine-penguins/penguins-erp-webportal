@@ -10,11 +10,14 @@ const routes: Routes = [
     },
     children: [
       {
-        path: 'myattendance',
-        loadChildren: () => import('./myattendance/myattendance.module').then(m => m.MyAttendanceModule)
+        path: 'takeattendance',
+        loadChildren: () => import('./takeattendance/takeattendance.module').then(m => m.TakeAttendanceModule)
       }, {
-        path: 'myclass',
-        loadChildren: () => import('./myclass/myclass.module').then(m => m.MyClassModule)
+        path: 'viewattendance',
+        loadChildren: () => import('./viewattendance/viewattendance.module').then(m => m.ViewAttendanceModule)
+      }, {
+        path: 'leaverequest',
+        loadChildren: () => import('./leaverequest/leaverequest.module').then(m => m.LeaveRequestModule)
       }
     ]
   }

@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { formatDate } from '@angular/common';
+import {animate, style, transition, trigger} from '@angular/animations';
 
-import '../../../../../assets/charts/amchart/amcharts.js';
-import '../../../../../assets/charts/amchart/pie.js';
-import '../../../../../assets/charts/amchart/serial.js';
-import '../../../../../assets/charts/amchart/light.js';
-import '../../../../../assets/charts/amchart/ammap.js';
-import '../../../../../assets/charts/amchart/worldLow.js';
+import '../../../../assets/charts/amchart/amcharts.js';
+import '../../../../assets/charts/amchart/pie.js';
+import '../../../../assets/charts/amchart/serial.js';
+import '../../../../assets/charts/amchart/light.js';
+import '../../../../assets/charts/amchart/ammap.js';
+import '../../../../assets/charts/amchart/worldLow.js';
 
 declare const AmCharts: any;
 declare const $: any;
@@ -15,13 +16,27 @@ declare const $: any;
   selector: 'app-viewattendance',
   templateUrl: './viewattendance.component.html',
   styleUrls: ['./viewattendance.component.scss',
-              '../../../../app.component.scss']
+              '../../../app.component.scss'],
+  animations: [
+    trigger('fadeInOutTranslate', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('400ms ease-in-out', style({opacity: 1}))
+      ]),
+      transition(':leave', [
+        style({transform: 'translate(0)'}),
+        animate('400ms ease-in-out', style({opacity: 0}))
+      ])
+    ])
+  ]
 })
+
 export class ViewAttendanceComponent implements OnInit {
 
   class = ""
   report_for = ""
   student = 0
+  showtab = 'student'
   start_date = formatDate(new Date(), 'yyyy-MM-dd', 'en');
   current_date = formatDate(new Date(), 'yyyy-MM-dd', 'en');
   month = formatDate(this.current_date,'MMMM','en');
@@ -31,16 +46,17 @@ export class ViewAttendanceComponent implements OnInit {
   month_list : String[] = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   
   dataTable: any;
+  dtOptions: any;
   @ViewChild('dataTable', {static: true}) table;
 
   constructor() {
   }
 
   ngOnInit() {
-
+    this.showTab('student');
     this.dataTable = $(this.table.nativeElement);
-    this.dataTable.DataTable();
-
+    this.dataTable.DataTable(this.dtOptions);
+    
     this.getCurrentMonthAndWeek();
     this.class = "1-A-Hindi"
     this.report_for = "daily"
@@ -171,6 +187,7 @@ export class ViewAttendanceComponent implements OnInit {
         }
       ]
     });
+    
   }
 
   getCurrentMonthAndWeek(){
@@ -183,4 +200,8 @@ export class ViewAttendanceComponent implements OnInit {
     }
   }
 
+  showTab(key){
+    $(".tab-content").css('display','none');
+    $("#"+key).css("display","block");
+  }
 }

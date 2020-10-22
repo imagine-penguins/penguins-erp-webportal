@@ -19,7 +19,7 @@ export class LoginService {
                 private router: Router) {}
 
     login(username: string, password: string): Observable<any> {
-        return this.http.post<any>('http://ec2-52-66-175-187.ap-south-1.compute.amazonaws.com:8083/users/login',
+        return this.http.post<any>('http://ec2-15-206-126-223.ap-south-1.compute.amazonaws.com:8083/users/login',
                 { username, password }).pipe(map((res => {
                 this.username = username;
                 this.password = password;

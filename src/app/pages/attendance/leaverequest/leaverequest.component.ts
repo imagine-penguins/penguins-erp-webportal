@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { formatDate } from '@angular/common';
 
-import '../../../../../assets/charts/amchart/amcharts.js';
-import '../../../../../assets/charts/amchart/pie.js';
-import '../../../../../assets/charts/amchart/serial.js';
-import '../../../../../assets/charts/amchart/light.js';
-import '../../../../../assets/charts/amchart/ammap.js';
-import '../../../../../assets/charts/amchart/worldLow.js';
+import '../../../../assets/charts/amchart/amcharts.js';
+import '../../../../assets/charts/amchart/pie.js';
+import '../../../../assets/charts/amchart/serial.js';
+import '../../../../assets/charts/amchart/light.js';
+import '../../../../assets/charts/amchart/ammap.js';
+import '../../../../assets/charts/amchart/worldLow.js';
 
 declare const AmCharts: any;
 declare const $: any;
@@ -15,7 +15,7 @@ declare const $: any;
   selector: 'app-leaverequest',
   templateUrl: './leaverequest.component.html',
   styleUrls: ['./leaverequest.component.scss',
-              '../../../../app.component.scss']
+              '../../../app.component.scss']
 })
 export class LeaveRequestComponent implements OnInit {
 

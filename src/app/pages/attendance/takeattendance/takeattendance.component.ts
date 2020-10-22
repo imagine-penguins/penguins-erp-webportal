@@ -7,7 +7,7 @@ declare const $: any;
   selector: 'app-takeattendance',
   templateUrl: './takeattendance.component.html',
   styleUrls: ['./takeattendance.component.scss',
-              '../../../../app.component.scss'],
+              '../../../app.component.scss'],
   animations: [
     trigger('fadeInOutTranslate', [
       transition(':enter', [

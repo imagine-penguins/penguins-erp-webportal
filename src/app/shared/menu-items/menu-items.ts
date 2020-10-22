@@ -66,30 +66,18 @@ const MENUITEMS = [
         icon: 'ti-layout-grid2-alt',
         children:  [
           {
-              state: 'myclass',
-              short_label: 'm',
-              name: 'My Class',
-              type: 'sub',
-              children: [
-                  {
-                      state: 'takeattendance',
-                      name: 'Take Attendance'
-                  },
-                  {
-                      state: 'viewattendance',
-                      name: 'View Attendance'
-                  },
-                  {
-                      state: 'leaverequest',
-                      name: 'Leave Requests'
-                  }
-              ]
+            state: 'takeattendance',
+            name: 'Take Attendance'
           },
           {
-              state: 'myattendance',
-              name: 'My Attendance'
+            state: 'viewattendance',
+            name: 'View Attendance'
           },
-          
+          {
+            state: 'leaverequest',
+            name: 'Leave Requests'
+          },
+              
         ]
       },
       {

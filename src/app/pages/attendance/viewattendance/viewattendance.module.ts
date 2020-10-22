@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { ViewAttendanceRoutingModule } from './viewattendance-routing.module';
 import { ViewAttendanceComponent } from './viewattendance.component';
-import {SharedModule} from '../../../../shared/shared.module';
+import {SharedModule} from '../../../shared/shared.module';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import {HttpClientModule} from '@angular/common/http';
     ViewAttendanceRoutingModule,
     SharedModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   declarations: [ViewAttendanceComponent]
 })
